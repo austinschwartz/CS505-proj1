@@ -1,0 +1,258 @@
+coarse, 10 ratio, 100 initial size
+	Test started for: class CoarseListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 100
+	Duration: 5000
+	-----------------
+	Inserts : 843793
+	Removes : 842041
+	Contains: 13626979
+	Returned true: 7668425
+	Returned false: 7653434
+	op/s: 3064371
+
+coarse, 10 ratio, 1000 initial size
+	Test started for: class CoarseListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 1000
+	Duration: 5000
+	-----------------
+	Inserts : 98591
+	Removes : 99116
+	Contains: 1599630
+	Returned true: 894915
+	Returned false: 902423
+	op/s: 359467
+
+coarse, 10 ratio, 10000 initial size
+	Test started for: class CoarseListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 10000
+	Duration: 5000
+	-----------------
+	Inserts : 10517
+	Removes : 10810
+	Contains: 173471
+	Returned true: 85073
+	Returned false: 109725
+	op/s: 38959
+
+
+coarse, 100 ratio, 100 initial size
+	Test started for: class CoarseListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 100
+	Duration: 5000
+	-----------------
+	Inserts : 5411062
+	Removes : 5408728
+	Contains: 0
+	Returned true: 5411068
+	Returned false: 5408609
+	op/s: 2163935
+
+coarse, 100 ratio, 1000 initial size
+	Test started for: class CoarseListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 1000
+	Duration: 5000
+	-----------------
+	Inserts : 855381
+	Removes : 855936
+	Contains: 0
+	Returned true: 856703
+	Returned false: 854615
+	op/s: 342263
+
+coarse, 100 ratio, 10000 initial size
+	Test started for: class CoarseListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 10000
+	Duration: 5000
+	-----------------
+	Inserts : 64063
+	Removes : 64491
+	Contains: 0
+	Returned true: 64258
+	Returned false: 64296
+	op/s: 25710
+
+
+hoh, 10 ratio, 100 initial size   
+	Test started for: class HandOverHandListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 100
+	Duration: 5000
+	-----------------
+	Inserts : 181047
+	Removes : 180757
+	Contains: 2911373
+	Returned true: 1634683
+	Returned false: 1643271
+	op/s: 655590
+
+hoh, 10 ratio, 1000 initial size
+	Test started for: class HandOverHandListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 1000
+	Duration: 5000
+	-----------------
+	Inserts : 71295
+	Removes : 71703
+	Contains: 1154023
+	Returned true: 644605
+	Returned false: 653526
+	op/s: 259626
+
+hoh, 10 ratio, 10000 initial size
+	Test started for: class HandOverHandListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 10000
+	Duration: 5000
+	-----------------
+	Inserts : 9936
+	Removes : 10017
+	Contains: 161216
+	Returned true: 78845
+	Returned false: 102354
+	op/s: 36239
+
+hoh, 100 ratio, 100 initial size
+	Test started for: class HandOverHandListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 100
+	Duration: 5000
+	-----------------
+	Inserts : 1574914
+	Removes : 1575094
+	Contains: 0
+	Returned true: 1574585
+	Returned false: 1574927
+	op/s: 629902
+
+hoh, 100 ratio, 1000 initial size
+	Test started for: class HandOverHandListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 1000
+	Duration: 5000
+	-----------------
+	Inserts : 626935
+	Removes : 629370
+	Contains: 0
+	Returned true: 628168
+	Returned false: 627998
+	op/s: 251233
+
+hoh, 100 ratio, 10000 initial size
+	Test started for: class HandOverHandListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 10000
+	Duration: 5000
+	-----------------
+	Inserts : 85574
+	Removes : 85550
+	Contains: 0
+	Returned true: 85805
+	Returned false: 85298
+	op/s: 34220
+
+
+optimistic, 10 ratio, 100 initial size
+	Test started for: class OptimisticListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 100
+	Duration: 5000
+	-----------------
+	Inserts : 1549660
+	Removes : 1550776
+	Contains: 23307263
+	Returned true: 13491000
+	Returned false: 13528157
+	op/s: 5403831
+
+optimistic, 10 ratio, 1000 initial size
+	Test started for: class OptimisticListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 1000
+	Duration: 5000
+	-----------------
+	Inserts : 332387
+	Removes : 331588
+	Contains: 5308352
+	Returned true: 2996673
+	Returned false: 2999250
+	op/s: 1199184
+
+optimistic, 10 ratio, 10000 initial size
+	Test started for: class OptimisticListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 10
+	Initial size: 10000
+	Duration: 5000
+	-----------------
+	Inserts : 19844
+	Removes : 19732
+	Contains: 319969
+	Returned true: 165395
+	Returned false: 194187
+	op/s: 71916
+
+optimistic, 100 ratio, 100 initial size
+	Test started for: class OptimisticListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 100
+	Duration: 5000
+	-----------------
+	Inserts : 13466715
+	Removes : 13460938
+	Contains: 0
+	Returned true: 13458469
+	Returned false: 13451801
+	op/s: 5382054
+
+optimistic, 100 ratio, 1000 initial size
+	Test started for: class OptimisticListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 1000
+	Duration: 5000
+	-----------------
+	Inserts : 2898204
+	Removes : 2897611
+	Contains: 0
+	Returned true: 2897253
+	Returned false: 2898213
+	op/s: 1159093
+
+optimistic, 100 ratio, 10000 initial size
+	Test started for: class OptimisticListSet with the following parameters:
+	Threads: 8
+	Update Ratio: 100
+	Initial size: 10000
+	Duration: 5000
+	-----------------
+	Inserts : 154914
+	Removes : 154696
+	Contains: 0
+	Returned true: 154447
+	Returned false: 155140
+	op/s: 61917
+
+
+
+
