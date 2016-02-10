@@ -33,39 +33,72 @@ public class Benchmark {
         (2 * initialListSize));
   }
 
+  public class BenchTask implements Runnable {
+    public int thread, updateRatios, duration;
+    public IntSet list;
+    public BenchTask(IntSet list, int thread, int updateRatios, int duration) {
+      this.list = list;
+      this.thread = thread;
+      this.updateRatios = updateRatios;
+      this.duration = duration;
+    }
+    public void run() {
+      while ((System.nanoTime() - startTime)/1e6 < duration) {
+        if (random.nextInt(100) <= updateRatios) {
+          if (random.nextBoolean()) {
+            boolean x = list.insert(getRandomNumber());
+            if (x) numTrue++;
+            else numFalse++;
+            numInserts++;
+          } else {
+            boolean x = list.remove(getRandomNumber());
+            if (x) numTrue++;
+            else numFalse++;
+            numRemoves++;
+          }
+        } else {
+          boolean x = list.contain(getRandomNumber());
+          if (x) numTrue++;
+          else numFalse++;
+          numContains++;
+        }
+      }
+    }
+  }
+
+  public static long startTime = 0;
+  public static long numInserts, numRemoves, numContains, numTrue, numFalse;
+  private final Random random = new Random();
+
   public void go(IntSet list) throws InterruptedException {
+    numInserts = 0;
+    numRemoves = 0;
+    numContains = 0;
+
     for (int i = 0; i < initialListSize; i++) {
       list.insert(getRandomNumber());
     }
-    System.out.println("Test started for: " + list.getClass());
-    long averageTime = 0;
-    for (int i = 0; i < 5; i++) {
 
-      long startTime = System.nanoTime();
-      ExecutorService threadPool = Executors.newFixedThreadPool(threads);
+    System.out.println("Test started for: " + list.getClass() + " with the following parameters:");
+    System.out.printf("Threads: %d\nUpdate Ratio: %d\nInitial size: %d\nDuration: %d\n",
+                      threads, updateRatios, initialListSize, duration);
+    System.out.println("-----------------");
+    ExecutorService threadPool = Executors.newFixedThreadPool(threads);
+    startTime = System.nanoTime();
 
-      for (int j = 0; j < threads; j++) {
-        threadPool.execute(new Runnable() {
-          @SuppressWarnings("unused")
-          @Override
-          public void run() {
-            for (int i = 0; i < 500; i++) {
-              Integer rand = getRandomNumber();
-              list.insert(rand);
-            }
-          }
-        });
-      }
-
-      threadPool.shutdown();
-      threadPool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
-
-      long entTime = System.nanoTime();
-      long totalTime = (entTime - startTime) / 1000000L;
-      averageTime += totalTime;
-      System.out.println("2500K entried added/retrieved in " + totalTime + " ms");
+    for (int j = 0; j < threads; j++) {
+      threadPool.execute(new BenchTask(list, j, updateRatios, duration));
     }
-    System.out.println("For " + list.getClass() + " the average time is " + averageTime / 5 + " ms\n");
+
+    threadPool.shutdown();
+    threadPool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
+
+    System.out.printf("Inserts : %d\n", numInserts);
+    System.out.printf("Removes : %d\n", numRemoves);
+    System.out.printf("Contains: %d\n", numContains);
+    System.out.printf("Returned true: %d\n", numTrue);
+    System.out.printf("Returned false: %d\n", numFalse);
+    System.out.printf("op/s: %d\n", (numTrue + numFalse) * 1000 / duration);
   }
 
   public Benchmark(int t, int u, int l, int ms, String scheme) {
